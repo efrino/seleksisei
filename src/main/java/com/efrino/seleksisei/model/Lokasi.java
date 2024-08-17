@@ -41,6 +41,8 @@ public class Lokasi {
     private Set<Proyek> proyekSet = new HashSet<>();
 
     // Getters and Setters
+    // (Already correctly implemented in your code)
+    // Getters and Setters
 
     public Long getId() {
         return id;

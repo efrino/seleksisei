@@ -23,6 +23,17 @@ import com.efrino.seleksisei.service.ProyekService;
 @RequestMapping("/proyek")
 public class ProyekController {
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Proyek> updateProyek(@PathVariable Long id, @RequestBody Proyek proyek) {
+        // Logic to update the project
+        Proyek updatedProyek = proyekService.updateProyek(id, proyek);
+        if (updatedProyek == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(updatedProyek);
+    }
+
+
     @Autowired
     private ProyekService proyekService;
 
@@ -41,13 +52,7 @@ public class ProyekController {
     public Proyek getProyekById(@PathVariable Long id) {
         return proyekService.getProyekById(id);
     }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Proyek> updateProyek(@PathVariable Long id, @RequestBody Proyek proyekDetails) {
-        Proyek updatedProyek = proyekService.updateProyek(id, proyekDetails);
-        return ResponseEntity.ok(updatedProyek);
-    }
-    
+        
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProyek(@PathVariable Long id) {

@@ -52,7 +52,9 @@ public class Proyek {
         inverseJoinColumns = @JoinColumn(name = "lokasi_id")
     )
     private Set<Lokasi> lokasiSet = new HashSet<>();
-    
+
+    // Getters and Setters
+    // (Already correctly implemented in your code)
     // Getters and Setters
 
     public Long getId() {

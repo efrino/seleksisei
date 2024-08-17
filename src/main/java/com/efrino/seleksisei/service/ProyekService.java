@@ -75,8 +75,6 @@ public class ProyekService {
     
         return proyekRepository.save(proyek);
     }
-    
-
 
     @Transactional
     public void deleteProyek(Long proyekId) {
